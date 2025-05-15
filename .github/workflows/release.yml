@@ -1,0 +1,100 @@
+name: Release
+permissions:
+  "contents": "write"
+
+on:
+  pull_request:
+  push:
+    tags:
+      - '**[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  build-local-artifacts:
+    name: build-local-artifacts
+    strategy:
+      matrix:
+        include:
+          - runner: 'ubuntu-24.04'
+            container: 'buildpack-deps:focal'
+            target: 'x86_64-unknown-linux-gnu'
+          - runner: 'macos-13'
+            target: 'x86_64-apple-darwin'
+          - runner: 'macos-14'
+            target: 'aarch64-apple-darwin'
+          - runner: 'windows-2022'
+            target: 'x86_64-pc-windows-msvc'
+    runs-on: ${{ matrix.runner }}
+    container: ${{ matrix.container }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      #      - name: enable windows longpaths
+      #        run: |
+      #          git config --global core.longpaths true
+      - uses: actions/checkout@master
+      - uses: Swatinem/rust-cache@v2.7.3
+      - name: Install dll-pack-builder
+        run: pip install git+https://github.com/nahco314/dll-pack-builder
+      - name: Build artifacts
+        env:
+          DLL_PACK_TARGET: ${{ matrix.target }}
+          BUILD_OUT_DIR: ./target/${{ matrix.target }}/super-release
+        run: bash ./dll-pack-build-local.sh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-build-local-${{ matrix.target }}
+          path: artifacts
+
+  build-global-artifacts:
+    needs:
+      - build-local-artifacts
+    runs-on: "ubuntu-20.04"
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Install dll-pack-builder
+        run: pip install git+https://github.com/nahco314/dll-pack-builder
+      - name: Fetch local artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: artifacts-*
+          path: artifacts
+          merge-multiple: true
+      - name: Build artifacts
+        run: bash ./dll-pack-build-global.sh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-build-global
+          path: artifacts
+
+  host:
+    needs:
+      - build-local-artifacts
+      - build-global-artifacts
+    if: ${{ always() && (needs.build-global-artifacts.result == 'skipped' || needs.build-global-artifacts.result == 'success') && (needs.build-local-artifacts.result == 'skipped' || needs.build-local-artifacts.result == 'success') }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: "ubuntu-20.04"
+    steps:
+      - uses: actions/checkout@master
+      - name: Fetch artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: artifacts-build-global
+          path: artifacts
+      - name: Get the tag name
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      - name: Create GitHub Release
+        env:
+          # todo
+          PRERELEASE_FLAG: ""
+          ANNOUNCEMENT_TITLE: "${{ env.TAG_NAME }}"
+          ANNOUNCEMENT_BODY: "woohoo!"
+          RELEASE_COMMIT: "${{ github.sha }}"
+        run: |
+          echo "$ANNOUNCEMENT_BODY" > $RUNNER_TEMP/notes.txt
+
+          gh release create "${{ env.TAG_NAME }}" --target "$RELEASE_COMMIT" $PRERELEASE_FLAG --title "$ANNOUNCEMENT_TITLE" --notes-file "$RUNNER_TEMP/notes.txt" artifacts/*
