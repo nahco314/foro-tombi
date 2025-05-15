@@ -53,7 +53,7 @@ pub fn format(
     let schema_options = config.schema.as_ref();
     let schema_store =
         tombi_schema_store::SchemaStore::new_with_options(tombi_schema_store::Options {
-            offline: Some(false),
+            offline: Some(true),
             strict: schema_options.and_then(|schema_options| schema_options.strict()),
         });
 

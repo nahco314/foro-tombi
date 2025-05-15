@@ -13,8 +13,6 @@ pub fn main_with_json(input: Value) -> Value {
     let target_content = String::get_value(&input, ["target-content"]).unwrap();
     let current_dir = PathBuf::from(get_current_dir(&input).unwrap());
 
-    
-
     match format(target_path, target_content, current_dir) {
         Ok(FormatResult::Success { formatted_content }) => {
             json!({
