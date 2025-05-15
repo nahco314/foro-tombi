@@ -1,18 +1,12 @@
 use crate::pretty_buf::PrettyBuf;
 use anyhow::{Context, Result};
 use either::Right;
-use nu_ansi_term::{Color, Style};
 use serde_tombi::config::try_from_path;
-use std::fmt;
-use std::path::PathBuf;
-use std::sync::{Arc, Mutex};
-use std::time::Instant;
+use std::path::{Path, PathBuf};
 use tombi_config::{Config, CONFIG_FILENAME, PYPROJECT_FILENAME};
-use tombi_diagnostic::printer::Simple;
-use tombi_diagnostic::{Diagnostic, Level, Print};
+use tombi_diagnostic::Print;
 use tombi_formatter::formatter::definitions::FormatDefinitions;
 use tombi_formatter::Formatter;
-use tombi_lexer::lex;
 
 pub enum FormatResult {
     Success { formatted_content: String },
@@ -20,8 +14,8 @@ pub enum FormatResult {
     Error { error: String },
 }
 
-pub fn load_with_path(current_dir: &PathBuf) -> Result<(Config, Option<PathBuf>)> {
-    let mut current_dir = current_dir.clone();
+pub fn load_with_path(current_dir: &Path) -> Result<(Config, Option<PathBuf>)> {
+    let mut current_dir = current_dir.to_path_buf();
 
     loop {
         let config_path = current_dir.join(CONFIG_FILENAME);

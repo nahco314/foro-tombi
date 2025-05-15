@@ -8,6 +8,12 @@ use std::fmt::Write;
 #[derive(Debug, Clone)]
 pub struct PrettyBuf(Arc<Mutex<String>>);
 
+impl Default for PrettyBuf {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PrettyBuf {
     pub fn new() -> Self {
         Self(Arc::new(Mutex::new(String::new())))

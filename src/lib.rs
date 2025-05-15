@@ -13,7 +13,9 @@ pub fn main_with_json(input: Value) -> Value {
     let target_content = String::get_value(&input, ["target-content"]).unwrap();
     let current_dir = PathBuf::from(get_current_dir(&input).unwrap());
 
-    let result = match format(target_path, target_content, current_dir) {
+    
+
+    match format(target_path, target_content, current_dir) {
         Ok(FormatResult::Success { formatted_content }) => {
             json!({
                 "format-status": "success",
@@ -36,9 +38,7 @@ pub fn main_with_json(input: Value) -> Value {
                 "plugin-panic": e.to_string(),
             })
         }
-    };
-
-    result
+    }
 }
 
 foro_plugin_setup!(main_with_json);
