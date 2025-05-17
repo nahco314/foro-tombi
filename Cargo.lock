@@ -555,7 +555,7 @@ dependencies = [
 
 [[package]]
 name = "foro-tombi"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "either",
@@ -1650,7 +1650,7 @@ dependencies = [
 [[package]]
 name = "serde_tombi"
 version = "0.0.1"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "chrono",
  "futures",
@@ -1898,7 +1898,7 @@ dependencies = [
 [[package]]
 name = "tombi-ast"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "itertools",
  "thiserror",
@@ -1913,7 +1913,7 @@ dependencies = [
 [[package]]
 name = "tombi-ast-editor"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "ahash",
  "futures",
@@ -1936,7 +1936,7 @@ dependencies = [
 [[package]]
 name = "tombi-config"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "clap",
  "serde",
@@ -1950,7 +1950,7 @@ dependencies = [
 [[package]]
 name = "tombi-date-time"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "chrono",
  "serde",
@@ -1961,7 +1961,7 @@ dependencies = [
 [[package]]
 name = "tombi-diagnostic"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "nu-ansi-term",
  "serde",
@@ -1974,7 +1974,7 @@ dependencies = [
 [[package]]
 name = "tombi-document"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "chrono",
  "indexmap",
@@ -1995,7 +1995,7 @@ dependencies = [
 [[package]]
 name = "tombi-document-tree"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "chrono",
  "indexmap",
@@ -2013,7 +2013,7 @@ dependencies = [
 [[package]]
 name = "tombi-formatter"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "itertools",
  "tokio",
@@ -2035,7 +2035,7 @@ dependencies = [
 [[package]]
 name = "tombi-json"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "indexmap",
  "itertools",
@@ -2051,7 +2051,7 @@ dependencies = [
 [[package]]
 name = "tombi-json-lexer"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "itertools",
  "regex",
@@ -2064,7 +2064,7 @@ dependencies = [
 [[package]]
 name = "tombi-json-syntax"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "pretty_assertions",
  "tombi-rg-tree",
@@ -2073,7 +2073,7 @@ dependencies = [
 [[package]]
 name = "tombi-json-value"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "indexmap",
  "serde",
@@ -2083,7 +2083,7 @@ dependencies = [
 [[package]]
 name = "tombi-lexer"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "itertools",
  "regex",
@@ -2096,7 +2096,7 @@ dependencies = [
 [[package]]
 name = "tombi-parser"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "drop_bomb",
  "itertools",
@@ -2115,7 +2115,7 @@ dependencies = [
 [[package]]
 name = "tombi-rg-tree"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "countme",
  "hashbrown 0.15.3",
@@ -2127,7 +2127,7 @@ dependencies = [
 [[package]]
 name = "tombi-schema-store"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "ahash",
  "futures",
@@ -2154,7 +2154,7 @@ dependencies = [
 [[package]]
 name = "tombi-syntax"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "rstest",
  "thiserror",
@@ -2165,7 +2165,7 @@ dependencies = [
 [[package]]
 name = "tombi-text"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "serde",
  "tower-lsp",
@@ -2175,7 +2175,7 @@ dependencies = [
 [[package]]
 name = "tombi-toml-text"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "thiserror",
  "tombi-toml-version",
@@ -2184,7 +2184,7 @@ dependencies = [
 [[package]]
 name = "tombi-toml-version"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "clap",
  "serde",
@@ -2193,7 +2193,7 @@ dependencies = [
 [[package]]
 name = "tombi-validator"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "futures",
  "itertools",
@@ -2209,7 +2209,7 @@ dependencies = [
 [[package]]
 name = "tombi-x-keyword"
 version = "0.0.0"
-source = "git+https://github.com/nahco314/tombi/?branch=main#32ad367e8a316395b82734526527dab67ddb77ee"
+source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
 dependencies = [
  "clap",
  "serde",

@@ -1,6 +1,6 @@
 [package]
 name = "foro-tombi"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 repository = "https://github.com/nahco314/foro-tombi"
 
@@ -13,12 +13,12 @@ crate-type = ["rlib", "cdylib"]
 
 [dependencies]
 anyhow = "1.0.87"
-tombi-lexer = { git = "https://github.com/nahco314/tombi/", branch = "main" }
-tombi-formatter = { git = "https://github.com/nahco314/tombi/", branch = "main" }
-tombi-schema-store = { git = "https://github.com/nahco314/tombi/", branch = "main" }
-tombi-diagnostic = { git = "https://github.com/nahco314/tombi/", branch = "main" }
-tombi-config = { git = "https://github.com/nahco314/tombi/", branch = "main" }
-serde_tombi = { git = "https://github.com/nahco314/tombi/", branch = "main" }
+tombi-lexer = { git = "https://github.com/tombi-toml/tombi/", branch = "main" }
+tombi-formatter = { git = "https://github.com/tombi-toml/tombi/", branch = "main" }
+tombi-schema-store = { git = "https://github.com/tombi-toml/tombi/", branch = "main" }
+tombi-diagnostic = { git = "https://github.com/tombi-toml/tombi/", branch = "main" }
+tombi-config = { git = "https://github.com/tombi-toml/tombi/", branch = "main" }
+serde_tombi = { git = "https://github.com/tombi-toml/tombi/", branch = "main" }
 foro-plugin-utils = { git = "https://github.com/nahco314/foro-plugin-utils", version = "0.2.1" }
 serde_json = "1.0.128"
 smol = "2.0.2"
