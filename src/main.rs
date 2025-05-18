@@ -1,8 +1,6 @@
 use std::path::PathBuf;
 use std::time::Instant;
 use anyhow::Result;
-use foro_tombi::model::SchemaData;
-use serde_json::Value;
 use foro_tombi::format::format;
 
 fn main() -> Result<()> {

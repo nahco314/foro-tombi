@@ -1,4 +1,3 @@
-use serde::Deserialize;
 
 pub struct SchemaData {
     pub url: String,

@@ -5,7 +5,6 @@ use either::Right;
 use serde_tombi::config::try_from_path;
 use std::borrow::Cow;
 use std::path::{Path, PathBuf};
-use std::time::Instant;
 use tombi_config::{Config, CONFIG_FILENAME, PYPROJECT_FILENAME};
 use tombi_diagnostic::Print;
 use tombi_formatter::formatter::definitions::FormatDefinitions;
@@ -64,7 +63,7 @@ pub fn format(
 
     smol::block_on(async {
         for schema_data in ALL_JSON_SCHEMAS {
-            let url = SchemaUrl::parse(&schema_data.url)?;
+            let url = SchemaUrl::parse(schema_data.url)?;
             let content = Cow::Borrowed(schema_data.content);
             let file_match: Vec<String> = serde_json::from_str(schema_data.file_match)?;
             schema_store
