@@ -1,13 +1,18 @@
+use crate::all_json_schema::ALL_JSON_SCHEMAS;
 use crate::pretty_buf::PrettyBuf;
 use anyhow::{Context, Result};
 use either::Right;
 use serde_tombi::config::try_from_path;
+use std::borrow::Cow;
 use std::path::{Path, PathBuf};
+use std::time::Instant;
 use tombi_config::{Config, CONFIG_FILENAME, PYPROJECT_FILENAME};
 use tombi_diagnostic::Print;
 use tombi_formatter::formatter::definitions::FormatDefinitions;
 use tombi_formatter::Formatter;
+use tombi_schema_store::{SchemaSpec, SchemaUrl};
 
+#[derive(Debug)]
 pub enum FormatResult {
     Success { formatted_content: String },
     Ignored,
@@ -53,11 +58,20 @@ pub fn format(
     let schema_options = config.schema.as_ref();
     let schema_store =
         tombi_schema_store::SchemaStore::new_with_options(tombi_schema_store::Options {
-            offline: Some(true),
+            offline: Some(true), // todo: online
             strict: schema_options.and_then(|schema_options| schema_options.strict()),
         });
 
     smol::block_on(async {
+        for schema_data in ALL_JSON_SCHEMAS {
+            let url = SchemaUrl::parse(&schema_data.url)?;
+            let content = Cow::Borrowed(schema_data.content);
+            let file_match: Vec<String> = serde_json::from_str(schema_data.file_match)?;
+            schema_store
+                .associate_schema(SchemaSpec::Raw(url, content), file_match)
+                .await;
+        }
+
         schema_store
             .load_config(&config, config_path.as_deref())
             .await?;

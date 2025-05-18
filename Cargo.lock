@@ -331,9 +331,9 @@ checksum = "d71b6127be86fdcfddb610f7182ac57211d4b18a3e9c82eb2d17662f2227ad6a"
 
 [[package]]
 name = "cc"
-version = "1.2.22"
+version = "1.2.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32db95edf998450acc7881c932f94cd9b05c87b4b2599e8bab064753da4acfd1"
+checksum = "5f4ac86a9e5bc1e2b3449ab9d7d3a6a405e3d1bb28d7b9be8614f55846ae3766"
 dependencies = [
  "shlex",
 ]
@@ -488,9 +488,9 @@ checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
 name = "errno"
-version = "0.3.11"
+version = "0.3.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "976dd42dc7e85965fe702eb8164f21f450704bdde31faefd6471dba214cb594e"
+checksum = "cea14ef9355e3beab063703aa9dab15afd25f0667c341310c1e5274bb1d0da18"
 dependencies = [
  "libc",
  "windows-sys 0.59.0",
@@ -562,6 +562,7 @@ dependencies = [
  "foro-plugin-utils",
  "glob",
  "nu-ansi-term",
+ "serde",
  "serde_json",
  "serde_tombi",
  "smol",
@@ -1650,7 +1651,7 @@ dependencies = [
 [[package]]
 name = "serde_tombi"
 version = "0.0.1"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "chrono",
  "futures",
@@ -1898,7 +1899,7 @@ dependencies = [
 [[package]]
 name = "tombi-ast"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "itertools",
  "thiserror",
@@ -1913,7 +1914,7 @@ dependencies = [
 [[package]]
 name = "tombi-ast-editor"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "ahash",
  "futures",
@@ -1936,7 +1937,7 @@ dependencies = [
 [[package]]
 name = "tombi-config"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "clap",
  "serde",
@@ -1950,7 +1951,7 @@ dependencies = [
 [[package]]
 name = "tombi-date-time"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "chrono",
  "serde",
@@ -1961,7 +1962,7 @@ dependencies = [
 [[package]]
 name = "tombi-diagnostic"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "nu-ansi-term",
  "serde",
@@ -1974,7 +1975,7 @@ dependencies = [
 [[package]]
 name = "tombi-document"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "chrono",
  "indexmap",
@@ -1995,7 +1996,7 @@ dependencies = [
 [[package]]
 name = "tombi-document-tree"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "chrono",
  "indexmap",
@@ -2013,7 +2014,7 @@ dependencies = [
 [[package]]
 name = "tombi-formatter"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "itertools",
  "tokio",
@@ -2035,7 +2036,7 @@ dependencies = [
 [[package]]
 name = "tombi-json"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "indexmap",
  "itertools",
@@ -2051,7 +2052,7 @@ dependencies = [
 [[package]]
 name = "tombi-json-lexer"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "itertools",
  "regex",
@@ -2064,7 +2065,7 @@ dependencies = [
 [[package]]
 name = "tombi-json-syntax"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "pretty_assertions",
  "tombi-rg-tree",
@@ -2073,7 +2074,7 @@ dependencies = [
 [[package]]
 name = "tombi-json-value"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "indexmap",
  "serde",
@@ -2083,7 +2084,7 @@ dependencies = [
 [[package]]
 name = "tombi-lexer"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "itertools",
  "regex",
@@ -2096,7 +2097,7 @@ dependencies = [
 [[package]]
 name = "tombi-parser"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "drop_bomb",
  "itertools",
@@ -2115,7 +2116,7 @@ dependencies = [
 [[package]]
 name = "tombi-rg-tree"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "countme",
  "hashbrown 0.15.3",
@@ -2127,7 +2128,7 @@ dependencies = [
 [[package]]
 name = "tombi-schema-store"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "ahash",
  "futures",
@@ -2154,7 +2155,7 @@ dependencies = [
 [[package]]
 name = "tombi-syntax"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "rstest",
  "thiserror",
@@ -2165,7 +2166,7 @@ dependencies = [
 [[package]]
 name = "tombi-text"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "serde",
  "tower-lsp",
@@ -2175,7 +2176,7 @@ dependencies = [
 [[package]]
 name = "tombi-toml-text"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "thiserror",
  "tombi-toml-version",
@@ -2184,7 +2185,7 @@ dependencies = [
 [[package]]
 name = "tombi-toml-version"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "clap",
  "serde",
@@ -2193,7 +2194,7 @@ dependencies = [
 [[package]]
 name = "tombi-validator"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "futures",
  "itertools",
@@ -2209,7 +2210,7 @@ dependencies = [
 [[package]]
 name = "tombi-x-keyword"
 version = "0.0.0"
-source = "git+https://github.com/tombi-toml/tombi/?branch=main#b0bb43f37edb3bb46d6b5d0d65c8e4f48f5a728f"
+source = "git+https://github.com/nahco314/tombi/?branch=raw_schema#85dae0376d76fa3854ee17b8b338e0197f137898"
 dependencies = [
  "clap",
  "serde",
@@ -2559,15 +2560,15 @@ dependencies = [
 
 [[package]]
 name = "windows-core"
-version = "0.61.0"
+version = "0.61.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4763c1de310c86d75a878046489e2e5ba02c649d185f21c67d4cf8a56d098980"
+checksum = "46ec44dc15085cea82cf9c78f85a9114c463a369786585ad2882d1ff0b0acf40"
 dependencies = [
  "windows-implement",
  "windows-interface",
  "windows-link",
  "windows-result",
- "windows-strings 0.4.0",
+ "windows-strings 0.4.1",
 ]
 
 [[package]]
@@ -2611,9 +2612,9 @@ dependencies = [
 
 [[package]]
 name = "windows-result"
-version = "0.3.2"
+version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c64fd11a4fd95df68efcfee5f44a294fe71b8bc6a91993e2791938abcc712252"
+checksum = "4b895b5356fc36103d0f64dd1e94dfa7ac5633f1c9dd6e80fe9ec4adef69e09d"
 dependencies = [
  "windows-link",
 ]
@@ -2629,9 +2630,9 @@ dependencies = [
 
 [[package]]
 name = "windows-strings"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7a2ba9642430ee452d5a7aa78d72907ebe8cfda358e8cb7918a2050581322f97"
+checksum = "2a7ab927b2637c19b3dbe0965e75d8f2d30bdd697a1516191cad2ec4df8fb28a"
 dependencies = [
  "windows-link",
 ]
