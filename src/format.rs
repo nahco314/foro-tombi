@@ -1,11 +1,13 @@
 use crate::all_json_schema::ALL_JSON_SCHEMAS;
+use crate::client::SurfClient;
 use crate::pretty_buf::PrettyBuf;
 use anyhow::{Context, Result};
 use either::Right;
 use serde_tombi::config::try_from_path;
 use std::borrow::Cow;
 use std::path::{Path, PathBuf};
-use tombi_config::{Config, CONFIG_FILENAME, PYPROJECT_FILENAME};
+use std::time::Instant;
+use tombi_config::{Config, SchemaOptions, CONFIG_FILENAME, PYPROJECT_FILENAME};
 use tombi_diagnostic::Print;
 use tombi_formatter::formatter::definitions::FormatDefinitions;
 use tombi_formatter::Formatter;
@@ -51,15 +53,17 @@ pub fn format(
     target_content: String,
     current_dir: PathBuf,
 ) -> Result<FormatResult> {
-    let (config, config_path) = load_with_path(&current_dir)?;
+    let (mut config, config_path) = load_with_path(&current_dir)?;
 
     let toml_version = config.toml_version.unwrap_or_default();
     let schema_options = config.schema.as_ref();
-    let schema_store =
-        tombi_schema_store::SchemaStore::new_with_options(tombi_schema_store::Options {
-            offline: Some(true), // todo: online
+    let schema_store = tombi_schema_store::SchemaStore::new_with_client(
+        SurfClient::new(),
+        tombi_schema_store::Options {
+            offline: Some(false),
             strict: schema_options.and_then(|schema_options| schema_options.strict()),
-        });
+        },
+    );
 
     smol::block_on(async {
         for schema_data in ALL_JSON_SCHEMAS {
@@ -71,9 +75,21 @@ pub fn format(
                 .await;
         }
 
+        if config.schema.is_none() {
+            config.schema = Some(SchemaOptions {
+                enabled: Some(false.into()),
+                strict: None,
+                catalog: None,
+            });
+        }
+
+        println!("{:?}", Instant::now());
+
         schema_store
             .load_config(&config, config_path.as_deref())
             .await?;
+
+        println!("{:?} 0", Instant::now());
 
         let exclude_patterns: Option<Vec<&str>> = config
             .exclude

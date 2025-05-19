@@ -1,7 +1,8 @@
-pub mod format;
-pub mod pretty_buf;
-pub mod model;
 mod all_json_schema;
+mod client;
+pub mod format;
+pub mod model;
+pub mod pretty_buf;
 
 use crate::format::{format, FormatResult};
 use foro_plugin_utils::compat_util::{get_current_dir, get_target};

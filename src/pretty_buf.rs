@@ -1,9 +1,9 @@
-use std::fmt;
-use std::sync::{Arc, Mutex};
 use nu_ansi_term::{Color, Style};
-use tombi_diagnostic::{Diagnostic, Level, Print};
-use tombi_diagnostic::printer::Simple;
+use std::fmt;
 use std::fmt::Write;
+use std::sync::{Arc, Mutex};
+use tombi_diagnostic::printer::Simple;
+use tombi_diagnostic::{Diagnostic, Level, Print};
 
 #[derive(Debug, Clone)]
 pub struct PrettyBuf(Arc<Mutex<String>>);
