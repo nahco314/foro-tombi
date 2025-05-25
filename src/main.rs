@@ -4,16 +4,16 @@ use std::path::PathBuf;
 use std::time::Instant;
 
 fn main() -> Result<()> {
-    println!("{:?}", Instant::now());
-
     let res = format(
-        PathBuf::from("Cargo.toml"),
+        PathBuf::from("pyproject.toml"),
         r#"
-[package]
-version = "0.2.0"
-edition = "2021"
-repository = "https://github.com/nahco314/foro-tombi"
-name = "foro-tombi"
+[project]
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+name = "aaa"
 
     "#
         .to_string(),

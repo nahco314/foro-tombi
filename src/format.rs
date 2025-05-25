@@ -6,7 +6,6 @@ use either::Right;
 use serde_tombi::config::try_from_path;
 use std::borrow::Cow;
 use std::path::{Path, PathBuf};
-use std::time::Instant;
 use tombi_config::{Config, SchemaOptions, CONFIG_FILENAME, PYPROJECT_FILENAME};
 use tombi_diagnostic::Print;
 use tombi_formatter::formatter::definitions::FormatDefinitions;
@@ -83,13 +82,9 @@ pub fn format(
             });
         }
 
-        println!("{:?}", Instant::now());
-
         schema_store
             .load_config(&config, config_path.as_deref())
             .await?;
-
-        println!("{:?} 0", Instant::now());
 
         let exclude_patterns: Option<Vec<&str>> = config
             .exclude
